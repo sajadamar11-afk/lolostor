@@ -1,0 +1,7 @@
+edge-tts
+pillow
+pillow-heif
+numpy
+imageio-ffmpeg
+arabic-reshaper
+python-bidi
