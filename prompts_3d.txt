@@ -1,0 +1,72 @@
+مغارة الأبواب السبعة - وصف الصور بستايل الكرتون ثلاثي الأبعاد
+================================================================
+
+الطريقة:
+1) اول رسالة لـ Gemini: انسخ "الرسالة الاولى" كاملة.
+2) باقي المشاهد بنفس المحادثة: انسخ سطر المشهد كما هو (يبدأ بـ Same style).
+3) احفظ كل صورة برقم المشهد: 01.png ... 15.png بمجلد episodes\02_maghara\images
+4) اذا تغيّر شكل شخصية، گول لـ Gemini: keep Salim exactly like the first image
+
+================================================================
+الرسالة الاولى (انسخها كلها)
+================================================================
+Generate an image in 16:9 landscape format.
+Style: high quality 3D animated feature film style, stylized cute cartoon characters with big expressive eyes and soft rounded shapes, detailed textures, warm cinematic lighting, soft global illumination, vibrant colors, shallow depth of field, Arabian Nights fantasy world, no text, no letters, no watermark.
+Characters (keep them identical in every image):
+Salim: young Arab boy-like woodcutter, slim, big curious brown eyes, messy curly black hair, patched brown tunic with a rope belt, always holding an old glowing copper lantern.
+Shaker: chubby middle-aged Arab man, sharp pointed black beard, thin curled mustache, shiny dark purple robe with gold trim, sly greedy eyes.
+The guardian: tiny very old wise man, huge fluffy white beard down to his feet, white robe, kind twinkling eyes.
+The doors: giant ancient stone doors carved with glowing blue geometric Islamic patterns, no readable writing.
+
+Scene 1: A dark cartoon mountain at night under a stormy sky with lightning, rain falling, a narrow crack in the rock glowing with warm golden light, magical and mysterious.
+
+================================================================
+باقي المشاهد (كل سطر رسالة لحالها بنفس المحادثة)
+================================================================
+02  Same style and same characters, 16:9. Scene: Salim chopping wood alone in a lush cartoon forest at sunset, tired but hopeful smile, the copper lantern hanging from his belt, golden light rays through the trees.
+
+03  Same style and same characters, 16:9. Scene: Salim inside a long rocky tunnel raising his glowing lantern, facing a gigantic stone door with glowing blue carvings, his eyes wide with awe and a little fear.
+
+04  Same style and same characters, 16:9. Scene: Shaker hiding behind a big rock outside the cave entrance in the rain, peeking inside with a sneaky greedy grin, rubbing his hands together.
+
+05  Same style and same characters, 16:9. Scene: Salim standing before the first stone door with eyes closed thinking hard, finger on his chin, the carvings glowing brighter, dust falling as the door starts to open.
+
+06  Same style and same characters, 16:9. Scene: a breathtaking cave corridor full of hanging glowing blue crystals like stars, Salim walking through it amazed with his mouth open, lantern in hand.
+
+07  Same style and same characters, 16:9. Scene: Shaker trapped in a small dark stone chamber, a heavy door slamming down behind him, dust cloud, his face in comic panic, hands on his cheeks.
+
+08  Same style and same characters, 16:9. Scene: an enormous third stone door opening, cool misty fog flowing out, Salim smiling with his curly hair blowing in the breeze, rain cloud carvings on the door.
+
+09  Same style and same characters, 16:9. Scene: a quiet magical chamber with soft blue light and floating sparkles, Salim standing perfectly still with a finger on his lips, calm peaceful expression.
+
+10  Same style and same characters, 16:9. Scene: Salim in a cave corridor looking back over his shoulder toward a distant cry for help, worried expression, torn between the path ahead and going back.
+
+11  Same style and same characters, 16:9. Scene: Salim reaching out his hand to help a dusty, teary-eyed Shaker climb out from under a lifted stone door, emotional warm moment.
+
+12  Same style and same characters, 16:9. Scene: Salim and Shaker standing side by side in front of a glowing fifth door, Shaker touching his face thinking, both now friends working together.
+
+13  Same style and same characters, 16:9. Scene: a magnificent glowing golden door slowly opening, bright golden light pouring out, Salim and Shaker shielding their eyes, a tall mirror and a tiny old man visible inside.
+
+14  Same style and same characters, 16:9. Scene: the tiny old guardian with a huge white beard placing a small pouch of gold into Salim's hands in front of a tall magical mirror reflecting Salim glowing with light, Shaker watching humbly.
+
+15  Same style and same characters, 16:9. Scene: a small cozy village schoolhouse at sunset, Salim teaching happy cartoon children, Shaker sitting among the kids raising his hand, the copper lantern hanging above the door.
+
+================================================================
+الصورة المصغرة (Thumbnail)
+================================================================
+Same style and same characters, 16:9, YouTube thumbnail: Salim holding his glowing lantern with a shocked excited face in front of a gigantic half-open glowing stone door, golden light pouring out, dramatic lighting, bold saturated colors, close-up, no text.
+
+================================================================
+تحريك المشاهد المهمة (اختياري - لموقع تحويل الصورة لفيديو مثل Pollo)
+ارفع الصورة واكتب وصف الحركة، واحفظ المقطع برقم المشهد: 05.mp4
+================================================================
+05.png  ->  The stone door slowly opens with dust falling, blue carvings glow brighter, Salim opens his eyes and smiles, camera slowly pushes in.
+
+07.png  ->  The heavy stone door slams down behind Shaker, dust bursts out, Shaker jumps in panic and grabs his cheeks, camera shakes slightly.
+
+11.png  ->  Salim pulls Shaker up by the hand, Shaker wipes his tears, both look at each other, warm emotional moment, slow camera movement.
+
+13.png  ->  The golden door swings open, bright golden light floods the scene, Salim and Shaker raise their hands to shield their eyes, sparkles fly.
+
+ملاحظة: اذا خليت 05.png و 05.mp4 الاثنين بالمجلد، البرنامج يعرضهم ورا بعض بنفس المشهد.
+اذا تريد الفيديو بس، انقل الصورة 05.png لمجلد ثاني.
