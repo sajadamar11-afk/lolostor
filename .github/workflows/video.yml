@@ -1,0 +1,82 @@
+name: تشغيل الحلقة
+
+on:
+  workflow_dispatch:
+    inputs:
+      episode:
+        description: "اسم مجلد الحلقة (مثال: 02_maghara)"
+        required: true
+        default: "02_maghara"
+      mode:
+        description: "الجودة: full = النسخة الكاملة ، preview = تجربة سريعة"
+        type: choice
+        options: [full, preview]
+        default: full
+      shorts:
+        description: "اصنع الشورتس ايضاً"
+        type: boolean
+        default: true
+
+permissions:
+  contents: write
+
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    timeout-minutes: 150
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Install Arabic fonts
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq fonts-noto-core libfribidi0 libharfbuzz0b >/dev/null
+
+      - name: Install libraries
+        run: pip install -r requirements.txt
+
+      - name: Cache voice
+        uses: actions/cache@v4
+        with:
+          path: episodes/${{ inputs.episode }}/work
+          key: voice-${{ inputs.episode }}-${{ hashFiles('story.txt', format('episodes/{0}/story.txt', inputs.episode)) }}
+
+      - name: Make video
+        env:
+          AZURE_KEY: ${{ secrets.AZURE_KEY }}
+          AZURE_REGION: ${{ secrets.AZURE_REGION }}
+        run: |
+          S="story_video_maker.py"
+          if [ -f "story video maker.py" ]; then S="story video maker.py"; fi
+          if [ -f ".github/workflows/story video maker.py" ]; then S=".github/workflows/story video maker.py"; cp "$S" ./svm.py; S="svm.py"; fi
+          echo "Using $S"
+          ARGS=""
+          if [ "${{ inputs.mode }}" = "preview" ]; then ARGS="$ARGS --preview"; fi
+          if [ "${{ inputs.shorts }}" = "false" ]; then ARGS="$ARGS --no-shorts"; fi
+          python "$S" "episodes/${{ inputs.episode }}" $ARGS
+
+      - name: Rename files
+        run: |
+          mkdir -p dist
+          EP="${{ inputs.episode }}"
+          for f in output/*.mp4; do
+            b=$(basename "$f"); suf=""
+            if [[ "$b" =~ _short([0-9]+) ]]; then suf="_short${BASH_REMATCH[1]}"; fi
+            if [[ "$b" == *_preview* ]]; then suf="${suf}_preview"; fi
+            cp "$f" "dist/${EP}${suf}.mp4"
+          done
+          ls -la dist
+
+      - name: Publish (download from Releases)
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          TAG="${{ inputs.episode }}-${{ inputs.mode }}-${{ github.run_number }}"
+          gh release create "$TAG" dist/*.mp4 \
+            --title "$TAG" \
+            --notes "الفيديو جاهز. اضغط على اسم الملف حتى تحمله."
